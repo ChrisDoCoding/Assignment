@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         mainView = MainView(frame: view.bounds)
+        // default missile is type 1
+        mainView.missile1Button.isEnabled = false
         mainView.missile1Button.addTarget(self, action: #selector(missile1ButtonTapped(_:)), for: .touchUpInside)
         mainView.missile2Button.addTarget(self, action: #selector(missile2ButtonTapped(_:)), for: .touchUpInside)
         mainView.missile3Button.addTarget(self, action: #selector(missile3ButtonTapped(_:)), for: .touchUpInside)
@@ -43,7 +45,7 @@ class MainViewController: UIViewController {
         let planeImage = UIImage(named: "plane")
         plane.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         plane.image = planeImage
-        plane.center = CGPoint(x: (view.frame.width / 2), y: (view.frame.height * 3 / 4) - 50)
+        plane.center = CGPoint(x: (view.frame.width / 2), y: (view.frame.height * 3 / 4) - 80)
         mainView.addSubview(plane)
     }
     
